@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butoon</title>
+</head>
+<style>
+.tombol {
+  position: relative;
+  height: 1.5rem;
+  width: 3rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 9999px;
+  background-color: darkturquoise;
+  transition: all .3s ease;
+}
+
+.tombol:checked {
+  background-color: darkviolet;
+}
+
+.tombol::before {
+  position: absolute;
+  content: "";
+  left: calc(1.5rem - 1.6rem);
+  top: calc(1.5rem - 1.6rem);
+  display: block;
+  height: 1.6rem;
+  width: 1.6rem;
+  cursor: pointer;
+  border: 1px solid darkturquoise;
+  border-radius: 9999px;
+  background-color : white; 
+  transition: all .3s ease;
+}
+
+
+
+.tombol:checked:before {
+  transform: translateX(100%);
+  border-color: darkviolet;
+}
+</style>
+<body>
+  <br>
+  <br>
+  <br>
+  <br>
+        <input class="tombol" type="checkbox" checked="true">
+</body>
+</html>

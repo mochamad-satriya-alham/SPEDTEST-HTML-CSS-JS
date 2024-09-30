@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah Gambar dan Opacity</title>
+    <style>
+        #imggs {
+            gap: 2rem;
+            text-align: center;
+            width: 300px;
+            height: auto;
+            display: flex;
+            justify-content: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="imggs">
+        <img id="image1" src="asutra.png" alt="1">
+        <img id="image2" src="inggris.webp" alt="2">
+        <img id="image3" src="swedia.webp" alt="3">
+    </div>
+
+    <form id="myForm">
+        <label for="images">Pilih Gambar:</label>
+        <select id="images">
+            <option value="image1">Gambar 1</option>
+            <option value="image2">Gambar 2</option>
+            <option value="image3">Gambar 3</option>
+        </select>
+
+        <label for="opacitys">Pilih Opacity:</label>
+        <select id="opacitys">
+            <option value="1">1</option>
+            <option value="0.5">0.5</option>
+            <option value="0.2">0.2</option>
+        </select>
+
+        <button type="button" onclick="changeImageAndOpacity()">Kirim</button>
+    </form>
+
+    <script>
+        function changeImageAndOpacity() {
+            var selectedImage = document.getElementById("images").value;
+            var selectedOpacity = document.getElementById("opacitys").value;
+
+            // Sembunyikan semua gambar
+            var images = document.querySelectorAll('#imggs img');
+            images.forEach(function(image) {
+                image.style.display = 'none';
+            });
+
+            // Tampilkan gambar yang dipilih dengan opacity yang sesuai
+            var image = document.getElementById(selectedImage);
+            image.style.display = 'block';
+            image.style.opacity = selectedOpacity;
+        }
+    </script>
+</body>
+</html>

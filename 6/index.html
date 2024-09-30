@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Nama</title>
+    <style>
+       
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #search-result {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="search" id="search-input" placeholder="Search...">
+    <button id="search-button">Submit</button>
+    <div id="search-result">Tidak mencari data....</div>
+    <script>
+        
+      const searchInput = document.getElementById('search-input');
+      const searchButton = document.getElementById('search-button');
+      const searchResult = document.getElementById('search-result');
+
+      searchButton.addEventListener('click', () => {
+        const searchText = searchInput.value;
+        
+        if (searchText ==='') {
+            searchResult.innerHTML = 'Tidak Mencari Data';
+        }else {
+        searchResult.innerHTML = `Mencari data : ${searchText}`;}
+      });
+    </script>
+</body>
+</html>
